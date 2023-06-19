@@ -17,7 +17,8 @@ module.exports=(sequelize,DataTypes)=>{
             type:DataTypes.STRING
         }
 },{
-    tableName:'user'
+    tableName:'user',
+    schema:'user'
 })
 return Model;
 }

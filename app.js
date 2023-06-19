@@ -19,12 +19,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 const models=require('./models');
-models.sequelize.authenticate().then(()=>{
-  console.log('connected to sql database:sequelize');
+models.sequelize.authenticate().then(() => {
+  console.log("Connected to SQL database:", CONFIG.db_name);
+  const schema = models.schemaCreate.then(() => {
+    models.sequelize.sync()
+  });
 }).catch((err) => {
-  console.log('unable to connect to sql database:sequelize',err.message);
+  console.error("Unable to connect to Postgres database:");
 });
-models.sequelize.sync({alter:true});
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*'); // Allow requests from any origin

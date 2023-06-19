@@ -17,6 +17,7 @@
     "morgan": "~1.9.1",
     "mysql2": "^3.2.0",
     "parse-error": "^0.2.0",
+    "pg": "^8.11.0",
     "sequelize": "^6.31.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^4.6.3"

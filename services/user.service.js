@@ -3,7 +3,7 @@ const {to,TE}=require('../global_functions');
 const user=require('../models').user;
 
 const addUser=async(userData)=>{
-    // console.log('check',userData)
+
     let [error,data]=await to(user.create({
         name1:userData.firstName,
         name2:userData.secondName
@@ -16,7 +16,7 @@ module.exports.addUser=addUser;
 
 
 const updateResult=async(result)=>{
-    console.log(result);
+
     let[error,res]=await to(user.update({result:result.value},
         {
             where:{[Op.and]:[
