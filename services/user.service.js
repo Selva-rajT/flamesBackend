@@ -1,6 +1,6 @@
 const {Op}=require('sequelize');
 const {to,TE}=require('../global_functions');
-const user=require('../models').user;
+const user=require('../models').victim;
 
 const addUser=async(userData)=>{
 
