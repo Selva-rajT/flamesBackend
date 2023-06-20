@@ -1,5 +1,5 @@
 module.exports=(sequelize,DataTypes)=>{
-    let Model=sequelize.define('user',{
+    let Model=sequelize.define('victim',{
         id:{
             type:DataTypes.INTEGER,
             primaryKey:true,
@@ -17,7 +17,7 @@ module.exports=(sequelize,DataTypes)=>{
             type:DataTypes.STRING
         }
 },{
-    tableName:'user',
+    tableName:'victim',
     schema:'user'
 })
 return Model;
