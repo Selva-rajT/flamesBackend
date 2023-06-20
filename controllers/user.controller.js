@@ -1,7 +1,7 @@
 const router=require('express').Router({mergeParams:true});
 const userService=require('../services/user.service');
 const {to,ReS,ReE}=require('../global_functions');
-const user=require('../models').victim;
+const victim=require('../models').victim;
 
 const addUser=async(req,res)=>{
     // console.log(req.body)
@@ -16,9 +16,9 @@ const updateUser=async(req,res)=>{
     return ReS(res,user,200);
 }
 const getAll=async(req,res)=>{
-    let [error,user]=await to(user.findAll());
+    let [error,users]=await to(victim.findAll());
     if(error) return ReE(res,error,422);
-    return ReS(res,user,200);
+    return ReS(res,users,200);
 }
 
 router.post('/',addUser);
