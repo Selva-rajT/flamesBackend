@@ -18,7 +18,7 @@ module.exports=(sequelize,DataTypes)=>{
         }
 },{
     tableName:'victim',
-    schema:'victims'
+    schema:'user'
 })
 return Model;
 }
