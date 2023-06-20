@@ -12,11 +12,17 @@ const addUser=async(req,res)=>{
 
 const updateUser=async(req,res)=>{
     let [error,user]=await to(userService.updateResult(req.body));
-    if(error) return ReE(res,eooro,422);
+    if(error) return ReE(res,error,422);
+    return ReS(res,user,200);
+}
+const getAll=async(req,res)=>{
+    let [error,user]=await to();
+    if(error) return ReE(res,error,422);
     return ReS(res,user,200);
 }
 
 router.post('/',addUser);
 router.put('/',updateUser);
+router.get('/');
 
 module.exports={router};

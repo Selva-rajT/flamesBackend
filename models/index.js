@@ -8,8 +8,6 @@ var basename = path.basename(__filename);
 var db = {};
 require('../config/config');
 require("../config/constant");
-const environment=CONFIG.environment;
-
 
   let sequelize = new Sequelize(
     CONFIG.db_name,
